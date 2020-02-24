@@ -1,0 +1,107 @@
+<html>
+	<head>
+	<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.button{
+					height:50px;
+					width:50px;
+					border-radius:20px;
+					font-size:25px;
+			}
+				.line{
+					height:60px;
+					width:210px;
+					border-radius:100px;
+					font-size:25px;
+					padding:15px;
+				}
+				
+				.ready{
+				    position:absolute;
+					top:20%;
+					left:40%;
+					background:linear-gradient(#CC0000,#ffff00,#00ffff);
+					padding:25px;
+					
+				}
+				.name{
+					background:linear-gradient(#39e600, #006680, #b82e8a);
+					height:100%;
+
+				}
+				
+	</style>
+	<script>
+			function display(num){
+			document.form.line.value=document.form.line.value+num
+			}
+			function equal(){
+			var y=document.form.line.value;
+			if(y)
+			{
+			document.form.line.value=eval(y)
+			}
+		}
+		function c(){
+			var y=document.form.line.value;
+			if(y)
+			{
+			document.form.line.value="";
+			}
+		}
+		function d()
+		{
+			var y=document.form.line.value;
+			if(y)
+			{
+				document.form.line.value=y.substring(0,y.length-1);
+			}
+		}
+		
+	</script>
+	</head>
+	<body>
+	<div class="name">
+	</div>
+		<div class="ready">
+			<form name="form">
+				<input type="text" class="line" name="line">
+				<table>
+					<tr>
+						<td><input class="button" type="button" value="C" onclick="c()"></td>
+						<td><input class="button"type="button" value="/" onclick="display('/')"></td>
+						<td><input class="button"type="button" value="*" onclick="display('*')"></td>
+						<td><input class="button"type="button" value="X" onclick="d()"</td>
+					</tr>
+					<tr>
+						<td><input class="button"type="button" value="7"  onclick="display('7')"></td>
+						<td><input  class="button"type="button" value="8" onclick="display('8')"></td>
+						<td><input class="button" type="button" value="9" onclick="display('9')"></td>
+						<td><input class="button"type="button" value="-"  onclick="display('-')"></td>
+					</tr>	
+					<tr>
+						<td><input class="button"type="button" value="4" onclick="display('4')"></td>
+						<td><input class="button"type="button" value="5" onclick="display('5')"></td>
+						<td><input class="button"type="button" value="6" onclick="display('6')"></td>
+						<td><input class="button"type="button" value="+"  onclick="display('+')"></td>
+					</tr>	
+					<tr>
+						<td><input class="button"type="button" value="1" onclick="display('1')"></td>
+						<td><input class="button"type="button" value="2" onclick="display('2')"></td>
+						<td><input class="button"type="button" value="3" onclick="display('3')"></td>
+						<td rowspan="2"><input class="button"type="button" style="height :100" value="=" onclick="equal()"></td>
+					</tr>	
+					<tr>
+						<td><input class="button"type="button" value="%" onclick="display('%')"></td>
+						<td><input class="button" type="button" value="0" onclick="display('0')"></td>
+						<td><input class="button"type="button" value="." onclick="display('.')"></td>
+						
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
